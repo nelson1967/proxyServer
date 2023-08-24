@@ -1,0 +1,29 @@
+{
+  "name": "proxyserver",
+  "version": "1.0.0",
+  "description": "Un proxy server para inspeccionar el trafico http y otros protocolos",
+  "main": "proxy.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nelson1967/proxyServer.git"
+  },
+  "keywords": [
+    "proxy",
+    "server"
+  ],
+  "author": "Nelson Fernández <nelson1967@gmail.com> (https://nelsoft.cl/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nelson1967/proxyServer/issues"
+  },
+  "homepage": "https://github.com/nelson1967/proxyServer#readme",
+  "eslintConfig": {
+    "extends": "standard"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
+}

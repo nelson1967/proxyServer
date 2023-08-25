@@ -1,6 +1,7 @@
 import * as net from 'node:net'
 const PORTENTRADA = process.env.PORTENTRADA ?? 1234
 const PORTDESTINO = process.env.PORTDESTINO ?? 4004
+const SRVDESTINO = process.env.SRVDESTINO ?? 'www.dcv.cl'
 const server = net.createServer()
 
 server.listen(PORTENTRADA, () => {
@@ -17,13 +18,14 @@ server.on('connection', (socket) => {
     const finLinea = d.indexOf(Buffer.from('\n'))
     const requerimiento = d.subarray(0, finLinea).toString()
     console.log('Requerimiento de entrada al Proxy recibida')
-    console.log('------------------------------------------\n', requerimiento)
+    // console.log('------------------------------------------\n', requerimiento)
+    console.log('------------------------------------------\n', d.toString())
     if (requerimiento.includes('POST')) {
       console.log('Es un POST que va al servidore final (full request):\n', d.toString())
     }
     let muestraRespuesta = false
     if (d.includes('.js')) muestraRespuesta = true
-    const destino = net.createConnection({ port: PORTDESTINO, host: 'localhost' }, () => {
+    const destino = net.createConnection(PORTDESTINO, SRVDESTINO, () => {
       // 'connect' listener.
       console.log('Conectado a Server final')
       destino.write(`${d}\r\n`)

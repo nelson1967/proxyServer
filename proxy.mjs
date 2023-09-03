@@ -6,7 +6,7 @@ const server = net.createServer()
 
 server.listen(PORTENTRADA, () => {
   // const { port } = server.address()
-  console.log(`Proxy esperando conexión en localhost:${PORTENTRADA} y resolviendo peticiones hacia destino ${SRVDESTINO}:${PORTDESTINO}`)
+  console.log(`Proxy esperando conexión en http://localhost:${PORTENTRADA}/ y resolviendo peticiones hacia destino http://${SRVDESTINO}:${PORTDESTINO}/`)
 })
 server.on('error', (err) => {
   console.log('Error:', err.name, err.message)

@@ -23,7 +23,8 @@ server.on('connection', (socket) => {
     console.log('\tRemote Address:', socket.remoteAddress)
     console.log('\tRemote Port   :', socket.remotePort)
     console.log('---------------------------------------------------------')
-    console.log(requerimiento)
+    // console.log(requerimiento)
+    console.log(d.toString())
     console.log('---------------------------------------------------------')
     // console.log('------------------------------------------\n', d.toString())
     if (requerimiento.includes('POST') || requerimiento.includes('GET')) {

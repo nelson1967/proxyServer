@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "standard": "^17.1.0"
+  },
+  "dependencies": {
+    "nodemon": "^3.0.1"
   }
 }
